@@ -162,8 +162,8 @@ Steps_Each_Day_MedianImputed &lt;- median(Steps_Each_Day_Imputed)</code></pre>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
-<div id="create-a-new-factor-variable-in-the-dataset-with-two-levels-a-aweekdaya-and-aweekenda-indicating-whether-a-given-date-is-a-weekday-or-weekend-day." class="section level5">
-<h5>1. Create a new factor variable in the dataset with two levels â€“ â€œweekdayâ€ and â€œweekendâ€ indicating whether a given date is a weekday or weekend day.</h5>
+<div id="create-a-new-factor-variable-in-the-dataset-with-two-levels-weekday-and-weekend-indicating-whether-a-given-date-is-a-weekday-or-weekend-day." class="section level5">
+<h5>1. Create a new factor variable in the dataset with two levels ??? ???weekday??? and ???weekend??? indicating whether a given date is a weekday or weekend day.</h5>
 <pre class="r"><code>My_Data_Imputed$dateType &lt;-  ifelse(as.POSIXlt(My_Data_Imputed$date)$wday %in% c(0,6), 'weekend', 'weekday')</code></pre>
 </div>
 <div id="make-a-panel-plot-containing-a-time-series-plot" class="section level5">
