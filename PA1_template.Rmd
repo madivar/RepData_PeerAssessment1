@@ -87,13 +87,13 @@ My_Data_Imputed$steps <- impute(My_Data$steps, fun=mean)
 
 
 ##### 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
-```{r}
+```{r, results='markup', warning=TRUE, message=TRUE}
 Steps_Each_Day_Imputed <- tapply(My_Data_Imputed$steps, My_Data_Imputed$date, sum)
 qplot(Steps_Each_Day_Imputed, xlab='Total number of steps each day', ylab='Frequency using binwith 500', binwidth=500)
 ```
 
 
-```{r}
+```{r, results='markup', warning=TRUE, message=TRUE}
 Steps_Each_Day_Mean_Imputed <- mean(Steps_Each_Day_Imputed)
 Steps_Each_Day_MedianImputed <- median(Steps_Each_Day_Imputed)
 ```
@@ -106,13 +106,13 @@ Steps_Each_Day_MedianImputed <- median(Steps_Each_Day_Imputed)
 ## Are there differences in activity patterns between weekdays and weekends?
 ##### 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
-```{r}
+```{r, results='markup', warning=TRUE, message=TRUE}
 My_Data_Imputed$dateType <-  ifelse(as.POSIXlt(My_Data_Imputed$date)$wday %in% c(0,6), 'weekend', 'weekday')
 ```
 
 ##### 2. Make a panel plot containing a time series plot
 
-```{r}
+```{r, results='markup', warning=TRUE, message=TRUE}
 Avg_My_Data_Imputed <- aggregate(steps ~ interval + dateType, data=My_Data_Imputed, mean)
 ggplot(Avg_My_Data_Imputed, aes(interval, steps)) + 
     geom_line() + 
