@@ -5,9 +5,24 @@ November 13, 2015
 ## Initial settings/packages
 
 ```r
+echo = TRUE  # Always make code visible
+options(scipen = 1)  # Turn off scientific notations for numbers
 library(ggplot2)
 library(scales)
 library(Hmisc)
+```
+
+```
+## Loading required package: grid
+## Loading required package: lattice
+## Loading required package: survival
+## Loading required package: Formula
+## 
+## Attaching package: 'Hmisc'
+## 
+## The following objects are masked from 'package:base':
+## 
+##     format.pval, round.POSIXt, trunc.POSIXt, units
 ```
 
 ## Loading and preprocessing the data
@@ -113,8 +128,8 @@ qplot(Steps_Each_Day_Imputed, xlab='Total number of steps each day', ylab='Frequ
 Steps_Each_Day_Mean_Imputed <- mean(Steps_Each_Day_Imputed)
 Steps_Each_Day_MedianImputed <- median(Steps_Each_Day_Imputed)
 ```
-* Mean (Imputed): 1.0766189\times 10^{4}
-* Median (Imputed):  1.0766189\times 10^{4}
+* Mean (Imputed): 10766.1886792
+* Median (Imputed):  10766.1886792
 
 
 ----
